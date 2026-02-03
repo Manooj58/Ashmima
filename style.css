@@ -72,3 +72,23 @@ button {
   background: #f1f1f1;
   color: #333;
 }
+.password-input {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.error {
+  margin-top: 12px;
+  color: #ff4d6d;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}

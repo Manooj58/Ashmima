@@ -4,10 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>For You ❤️</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="card">
+    <!-- PASSWORD SCREEN -->
+    <div class="card" id="loginScreen">
+      <p class="emoji">🔐</p>
+      <h1>Enter the Date</h1>
+
+      <p class="message">Hint: A special day for us 💕</p>
+
+      <input
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="DD-MM"
+        id="passwordInput"
+        class="password-input"
+      />
+
+      <button class="yes" id="enterBtn">Enter ❤️</button>
+
+      <p class="error" id="errorMsg"></p>
+    </div>
+
+    <!-- HOME / VALENTINE SCREEN -->
+    <div class="card hidden" id="homeScreen">
       <p class="emoji">💖</p>
       <h1>Hey My Love</h1>
 
@@ -24,6 +46,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
