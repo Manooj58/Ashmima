@@ -1,17 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
   const openBtn = document.getElementById('openModal');
+  const music = document.getElementById('bgMusic');
   const closeBtn = document.getElementById('closeModal');
   const modal = document.getElementById('modal');
   const petalsContainer = document.querySelector('.petals');
 
   openBtn.addEventListener('click', () => {
     modal.classList.remove('hidden');
+
+    music.volume = 0.5; // soft & romantic
+    music.play().catch(() => {
+      console.log('Music blocked until user interaction');
+    });
   });
 
   closeBtn.addEventListener('click', () => {
     modal.classList.add('hidden');
+    music.pause();
   });
-
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.add('hidden');
   });
