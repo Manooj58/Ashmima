@@ -49,3 +49,98 @@ p {
     transform: translateY(0);
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff4d6d, #ff8fab);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+.day {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h1 span {
+  color: #fff0f3;
+}
+
+.rose {
+  font-size: 120px;
+  margin: 20px 0;
+  animation: heartbeat 2s infinite;
+}
+
+.message {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.08);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Falling petals */
+.petals::before {
+  content: '🌸 🌹 🌸 🌹 🌸';
+  position: absolute;
+  width: 100%;
+  top: -10%;
+  font-size: 24px;
+  animation: fall 8s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(120vh);
+  }
+}
