@@ -2,58 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-  height: 100vh;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-.rose {
-  font-size: 120px;
-  animation: float 3s ease-in-out infinite;
-}
-
-h1 {
-  margin-top: 20px;
-  font-size: 32px;
-  font-weight: 600;
-}
-
-p {
-  margin-top: 16px;
-  font-size: 18px;
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-/* Rose floating animation */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
@@ -64,8 +12,10 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* MAIN CONTAINER */
 .container {
   text-align: center;
   padding: 20px;
@@ -81,32 +31,95 @@ body {
 h1 {
   margin-top: 10px;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 h1 span {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
   color: #fff0f3;
 }
 
 .rose {
   font-size: 120px;
-  margin: 20px 0;
+  margin: 24px 0;
   animation: heartbeat 2s infinite;
 }
 
-.message {
-  font-size: 17px;
-  line-height: 1.6;
-  opacity: 0.95;
+/* BUTTON */
+.view-btn {
+  padding: 14px 26px;
+  font-size: 16px;
+  border: none;
+  border-radius: 999px;
+  background: white;
+  color: #ff4d6d;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.footer {
-  margin-top: 20px;
-  font-size: 14px;
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: white;
+  color: #444;
+  width: 90%;
+  max-width: 360px;
+  padding: 24px;
+  border-radius: 20px;
+  text-align: center;
+  animation: pop 0.4s ease;
+}
+
+.modal-content h2 {
+  font-family: 'Pacifico', cursive;
+  color: #ff4d6d;
+  margin-bottom: 12px;
+}
+
+.modal-content p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  margin-top: 14px;
+  font-size: 13px;
   opacity: 0.8;
 }
 
-/* Heartbeat animation */
+/* CLOSE ICON */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ff4d6d;
+}
+
+/* PETALS */
+.petals::before {
+  content: '🌸 🌹 🌸 🌹 🌸';
+  position: absolute;
+  width: 100%;
+  top: -10%;
+  font-size: 24px;
+  animation: fall 8s linear infinite;
+  opacity: 0.7;
+}
+
+/* ANIMATIONS */
 @keyframes heartbeat {
   0% {
     transform: scale(1);
@@ -125,17 +138,6 @@ h1 span {
   }
 }
 
-/* Falling petals */
-.petals::before {
-  content: '🌸 🌹 🌸 🌹 🌸';
-  position: absolute;
-  width: 100%;
-  top: -10%;
-  font-size: 24px;
-  animation: fall 8s linear infinite;
-  opacity: 0.7;
-}
-
 @keyframes fall {
   0% {
     transform: translateY(0);
@@ -143,4 +145,19 @@ h1 span {
   100% {
     transform: translateY(120vh);
   }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
 }

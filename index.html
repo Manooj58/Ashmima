@@ -4,27 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Rose Day My Pandu 🌹</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- Falling petals -->
     <div class="petals"></div>
 
+    <!-- MAIN CONTENT -->
     <div class="container">
       <p class="day">Day 1 of Valentine</p>
-      <h1>Happy Rose Day<br /><span>My Pandu 🌹</span></h1>
+
+      <h1>
+        Happy Rose Day<br />
+        <span>My Pandu 🌹</span>
+      </h1>
 
       <div class="rose">🌹</div>
 
-      <p class="message">
-        This rose is not just a flower.<br /><br />
-        It’s a reminder that even with miles between us, my heart still finds
-        its way to you every single day ❤️<br /><br />
-        Distance can be long…<br />
-        but my love for you is longer 😌
-      </p>
+      <button class="view-btn" id="openModal">View Message 💌</button>
+    </div>
 
-      <p class="footer">From your always-missing-you husband 💕</p>
+    <!-- POPUP MODAL -->
+    <div class="modal hidden" id="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+
+        <h2>For My Pandu 💖</h2>
+
+        <p>
+          This rose is not just a flower 🌹<br /><br />
+          It’s a reminder that even with miles between us, my heart still finds
+          its way to you every single day ❤️<br /><br />
+          Distance can be long…<br />
+          but my love for you is longer 😌
+        </p>
+
+        <p class="modal-footer">From your always-missing-you husband 💕</p>
+      </div>
     </div>
 
     <script src="./script.js"></script>
