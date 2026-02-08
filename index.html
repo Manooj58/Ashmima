@@ -3,56 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For My Pandu 🐼</title>
+    <title>For My Pandu ❤️</title>
 
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- Falling flowers container -->
-    <div class="petals"></div>
+    <!-- Falling wedding icons -->
+    <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
 
-    <!-- MAIN CONTENT -->
+    <div class="falling-container"></div>
+
     <div class="container">
-      <p class="day">Day 1 of Valentine</p>
+      <div class="top-text">Day 2 of Valentines</div>
+      <!-- <div class="for-text">For my Pandu 🐼❤️</div> -->
 
-      <h1>
-        Happy Rose Day<br />
-        <span>My Pandu 🐼🌹</span>
-      </h1>
+      <div class="heart">💍</div>
+      <h1>Happy Propose Day my Pandu 🐼❤️</h1>
 
-      <div class="rose">🌹</div>
+      <p class="subtitle">
+        Some feelings are too beautiful<br />
+        to be kept silent ✨
+      </p>
 
-      <button class="view-btn" id="openModal">View Message 💌</button>
-    </div>
+      <button class="open-message" id="openMessage">💌 My Feelings</button>
 
-    <!-- POPUP MODAL -->
-    <div class="modal hidden" id="modal">
-      <div class="modal-content">
-        <span class="close" id="closeModal">✖</span>
+      <h2>Will you walk with me forever? 🌹</h2>
 
-        <h2>For My Pandu 🐼💖</h2>
-
-        <p>
-          This rose is not just a flower 🌹<br /><br />
-          It’s a reminder that even with miles between us, my heart still finds
-          its way to you every single day ❤️ Distance can be long…<br />
-          but my love for you is longer 😌<br /><br />
-          I miss you soo much and I love you dheraaiiii mero budi 😘💖
-        </p>
-
-        <p class="modal-footer">From your always-missing-you Budu 💕</p>
+      <div class="buttons">
+        <button id="yesBtn">Yes 💍</button>
+        <button id="noBtn">No 🙈</button>
       </div>
     </div>
 
-    <script src="./script.js"></script>
-    <audio id="bgMusic" loop>
-      <source src="music.mp3" type="audio/mpeg" />
-    </audio>
+    <!-- MESSAGE POPUP -->
+    <div class="modal" id="messageModal">
+      <div class="modal-content">
+        <span class="close" id="closeMessage">&times;</span>
+        <h3>My Pandu 💖</h3>
+        <p>
+          You are my comfort, my smile, and my home. I don’t promise perfection,
+          but I promise love, loyalty, and choosing you every day. I want to
+          spend rest of life together with you, Only you mero mutu 💍
+        </p>
+      </div>
+    </div>
+
+    <!-- YES POPUP -->
+    <div class="modal" id="yesModal">
+      <div class="modal-content">
+        <span class="close" id="closeYes">&times;</span>
+        <h3>She Said YES!! 🎉💍</h3>
+        <p>
+          Pandu, you just made me the happiest person alive 😭❤️ Let’s dance
+          into forever!
+        </p>
+        <img
+          src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+          class="dance-gif"
+          alt="Dancing Man"
+        />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

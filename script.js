@@ -1,52 +1,78 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const openBtn = document.getElementById('openModal');
-  const music = document.getElementById('bgMusic');
-  const closeBtn = document.getElementById('closeModal');
-  const modal = document.getElementById('modal');
-  const petalsContainer = document.querySelector('.petals');
+/* ELEMENTS */
+const openMessage = document.getElementById('openMessage');
+const messageModal = document.getElementById('messageModal');
+const closeMessage = document.getElementById('closeMessage');
 
-  openBtn.addEventListener('click', () => {
-    modal.classList.remove('hidden');
+const yesBtn = document.getElementById('yesBtn');
+const yesModal = document.getElementById('yesModal');
+const closeYes = document.getElementById('closeYes');
 
-    music.volume = 0.5; // soft & romantic
-    music.play().catch(() => {
-      console.log('Music blocked until user interaction');
-    });
-  });
+const noBtn = document.getElementById('noBtn');
+const fallingContainer = document.querySelector('.falling-container');
+const bgMusic = document.getElementById('bgMusic');
+let musicStarted = false;
 
-  closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-    music.pause();
-  });
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.add('hidden');
-  });
-
-  /* 🌸 Dynamic Falling Flowers */
-  const flowers = ['🌸', '🌹', '💮'];
-
-  function createFlower() {
-    const flower = document.createElement('span');
-    flower.classList.add('flower');
-    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-
-    flower.style.left = Math.random() * 100 + 'vw';
-    flower.style.fontSize = Math.random() * 16 + 18 + 'px';
-    flower.style.animationDuration = Math.random() * 5 + 5 + 's';
-
-    petalsContainer.appendChild(flower);
-
-    setTimeout(() => {
-      flower.remove();
-    }, 10000);
+function startMusic() {
+  if (!musicStarted) {
+    bgMusic.volume = 0.6;
+    bgMusic.play().catch(() => {});
+    musicStarted = true;
   }
+}
+document.addEventListener('click', startMusic);
+document.addEventListener('touchstart', startMusic);
 
-  setInterval(createFlower, 400);
-
-  /* Fade in */
-  document.body.style.opacity = 0;
-  document.body.style.transition = 'opacity 1.5s ease';
-  setTimeout(() => {
-    document.body.style.opacity = 1;
-  }, 100);
+/* MESSAGE POPUP */
+openMessage.addEventListener('click', () => {
+  messageModal.style.display = 'flex';
 });
+
+closeMessage.addEventListener('click', () => {
+  messageModal.style.display = 'none';
+});
+
+messageModal.addEventListener('click', (e) => {
+  if (e.target === messageModal) {
+    messageModal.style.display = 'none';
+  }
+});
+
+/* YES POPUP */
+yesBtn.addEventListener('click', () => {
+  yesModal.style.display = 'flex';
+});
+
+closeYes.addEventListener('click', () => {
+  yesModal.style.display = 'none';
+});
+
+yesModal.addEventListener('click', (e) => {
+  if (e.target === yesModal) {
+    yesModal.style.display = 'none';
+  }
+});
+
+/* FUNNY NO BUTTON */
+function moveNo() {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 100;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+noBtn.addEventListener('mouseover', moveNo);
+noBtn.addEventListener('touchstart', moveNo);
+
+/* FALLING WEDDING EMOJIS */
+const icons = ['💍', '👰', '🤵', '💖', '🌹'];
+
+function createFallingIcon() {
+  const icon = document.createElement('div');
+  icon.className = 'fall';
+  icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+  icon.style.left = Math.random() * 100 + 'vw';
+  icon.style.animationDuration = 4 + Math.random() * 3 + 's';
+  fallingContainer.appendChild(icon);
+  setTimeout(() => icon.remove(), 7000);
+}
+
+setInterval(createFallingIcon, 400);
