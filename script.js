@@ -1,78 +1,41 @@
-/* ELEMENTS */
-const openMessage = document.getElementById('openMessage');
-const messageModal = document.getElementById('messageModal');
-const closeMessage = document.getElementById('closeMessage');
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtn = document.getElementById('openModal');
+  const closeBtn = document.getElementById('closeModal');
+  const modal = document.getElementById('modal');
+  const music = document.getElementById('bgMusic');
 
-const yesBtn = document.getElementById('yesBtn');
-const yesModal = document.getElementById('yesModal');
-const closeYes = document.getElementById('closeYes');
+  // OPEN POPUP + MUSIC
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    music.volume = 0.5;
+    music.play().catch(() => {});
+  });
 
-const noBtn = document.getElementById('noBtn');
-const fallingContainer = document.querySelector('.falling-container');
-const bgMusic = document.getElementById('bgMusic');
-let musicStarted = false;
+  // CLOSE POPUP
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    music.pause();
+  });
 
-function startMusic() {
-  if (!musicStarted) {
-    bgMusic.volume = 0.6;
-    bgMusic.play().catch(() => {});
-    musicStarted = true;
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+
+  // 🍫 BACKGROUND CHOCOLATE FALL
+  const chocolates = ['🍫', '🍪', '🍩', '🍬'];
+
+  function dropChocolate() {
+    const el = document.createElement('div');
+    el.className = 'falling-choco';
+    el.innerText = chocolates[Math.floor(Math.random() * chocolates.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = 14 + Math.random() * 18 + 'px';
+    el.style.animationDuration = 6 + Math.random() * 6 + 's';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 14000);
   }
-}
-document.addEventListener('click', startMusic);
-document.addEventListener('touchstart', startMusic);
 
-/* MESSAGE POPUP */
-openMessage.addEventListener('click', () => {
-  messageModal.style.display = 'flex';
+  setInterval(dropChocolate, 450);
 });
-
-closeMessage.addEventListener('click', () => {
-  messageModal.style.display = 'none';
-});
-
-messageModal.addEventListener('click', (e) => {
-  if (e.target === messageModal) {
-    messageModal.style.display = 'none';
-  }
-});
-
-/* YES POPUP */
-yesBtn.addEventListener('click', () => {
-  yesModal.style.display = 'flex';
-});
-
-closeYes.addEventListener('click', () => {
-  yesModal.style.display = 'none';
-});
-
-yesModal.addEventListener('click', (e) => {
-  if (e.target === yesModal) {
-    yesModal.style.display = 'none';
-  }
-});
-
-/* FUNNY NO BUTTON */
-function moveNo() {
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 200 - 100;
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
-}
-
-noBtn.addEventListener('mouseover', moveNo);
-noBtn.addEventListener('touchstart', moveNo);
-
-/* FALLING WEDDING EMOJIS */
-const icons = ['💍', '👰', '🤵', '💖', '🌹'];
-
-function createFallingIcon() {
-  const icon = document.createElement('div');
-  icon.className = 'fall';
-  icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-  icon.style.left = Math.random() * 100 + 'vw';
-  icon.style.animationDuration = 4 + Math.random() * 3 + 's';
-  fallingContainer.appendChild(icon);
-  setTimeout(() => icon.remove(), 7000);
-}
-
-setInterval(createFallingIcon, 400);

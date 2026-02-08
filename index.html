@@ -3,71 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For My Pandu ❤️</title>
+    <title>Happy Chocolate Day 💝</title>
 
-    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Falling wedding icons -->
-    <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
-
-    <div class="falling-container"></div>
+    <!-- BITTEN CHOCOLATE TOP -->
+    <div class="bite"></div>
 
     <div class="container">
-      <div class="top-text">Day 2 of Valentines</div>
-      <!-- <div class="for-text">For my Pandu 🐼❤️</div> -->
+      <h1>
+        Day 2 of Valentine 💝<br />
+        <span>
+          Happy Chocolate Day <span class="choco">🍫</span><br />
+          My Pandu 🐼
+        </span>
+      </h1>
 
-      <div class="heart">💍</div>
-      <h1>Happy Propose Day my Pandu 🐼❤️</h1>
+      <!-- SNICKERS IMAGE -->
+      <div class="choco-icon">🍫</div>
 
-      <p class="subtitle">
-        Some feelings are too beautiful<br />
-        to be kept silent ✨
-      </p>
-
-      <button class="open-message" id="openMessage">💌 My Feelings</button>
-
-      <h2>Will you walk with me forever? 🌹</h2>
-
-      <div class="buttons">
-        <button id="yesBtn">Yes 💍</button>
-        <button id="noBtn">No 🙈</button>
-      </div>
+      <button id="openModal">View Message 🍫</button>
     </div>
 
-    <!-- MESSAGE POPUP -->
-    <div class="modal" id="messageModal">
+    <!-- POPUP MODAL -->
+    <div id="modal" class="modal hidden">
       <div class="modal-content">
-        <span class="close" id="closeMessage">&times;</span>
-        <h3>My Pandu 💖</h3>
-        <p>
-          You are my comfort, my smile, and my home. I don’t promise perfection,
-          but I promise love, loyalty, and choosing you every day. I want to
-          spend rest of life together with you, Only you mero mutu 💍
+        <div id="closeModal" class="close">×</div>
+        <h2>For My Pandu 🐼</h2>
+        <p class="message">
+          I wish I were there today,<br />
+          so I could put a chocolate in your hand<br />
+          and steal a smile from you.
+          <br /><br />
+
+          Since I’m far,<br />
+          let these chocolates fall for you instead.
+          <br /><br />
+
+          You’re sweeter than any chocolate,<br />
+          and more addictive than all of them combined.
+
+          <br /><br />
+
+          <strong>
+            I miss you so much.<br />
+            I love you endlessly, my Pandu 🐼🍫
+          </strong>
         </p>
       </div>
     </div>
 
-    <!-- YES POPUP -->
-    <div class="modal" id="yesModal">
-      <div class="modal-content">
-        <span class="close" id="closeYes">&times;</span>
-        <h3>She Said YES!! 🎉💍</h3>
-        <p>
-          Pandu, you just made me the happiest person alive 😭❤️ Let’s dance
-          into forever!
-        </p>
-        <img
-          src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
-          class="dance-gif"
-          alt="Dancing Man"
-        />
-      </div>
-    </div>
+    <!-- MUSIC -->
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
 
     <script src="script.js"></script>
   </body>
